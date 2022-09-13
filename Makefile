@@ -3,7 +3,7 @@ SHELL := /bin/bash
 ASM    := nasm
 AFLAGS := -f bin
 
-all: bootsector.bin
+all: bootsector/bootsector.bin
 
 bootsector/bootsector.bin: bootsector/bootsector.asm
 	$(ASM) $(AFLAGS) $^ -o $@
