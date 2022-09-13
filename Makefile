@@ -3,16 +3,19 @@ SHELL := /bin/bash
 ASM    := nasm
 AFLAGS := -f bin
 
-all: bootsector/bootsector.bin
+SRC := bootsector/bootsector.asm
+BIN := bootsector/bootsector.bin
 
-bootsector/bootsector.bin: bootsector/bootsector.asm
+all: $(BIN)
+
+$(BIN): $(SRC)
 	$(ASM) $(AFLAGS) $^ -o $@
 
-run: bootsector/bootsector.bin
+run: $(BIN)
 	qemu-system-x86_64 $^
 
 clean:
-	rm bootsector/bootsector.bin
+	rm $(BIN)
 
 .PHONY:
 	all clean run
