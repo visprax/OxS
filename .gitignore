@@ -53,3 +53,6 @@ dkms.conf
 
 # notes file
 notes.md
+
+# scratch directory
+scratch/
