@@ -27,7 +27,7 @@ call print_string
 ; containing the expression, this will loop infinitely.
 jmp $
 
-%include "print_string.asm"
+%include "printstr.asm"
 
 ; data declarations 
 HELLO_MSG:
