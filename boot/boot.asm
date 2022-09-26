@@ -41,9 +41,9 @@ call print_hex
 ; containing the expression, this will loop infinitely.
 jmp $
 
-%include "printstr.asm"
-%include "printhex.asm"
-%include "diskload.asm"
+%include "boot/printstr.asm"
+%include "boot/printhex.asm"
+%include "boot/diskload.asm"
 
 ; global variables
 BOOT_DRIVE:
@@ -63,5 +63,5 @@ DW 0xaa55
 ; here we set another 2 sectors after the boot sector to a familiar 
 ; work so after reading the sectors we can actually make sure that 
 ; we read the sectors by printing the first word of each sector.
-times 256 0xdada ; first  sector after boot sector
-times 256 0xface ; second sector after boot sector
+times 256 DW 0xdada ; first  sector after boot sector
+times 256 DW 0xface ; second sector after boot sector
