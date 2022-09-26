@@ -3,8 +3,8 @@ SHELL := /bin/bash
 ASM    := nasm
 AFLAGS := -f bin
 
-SRC := boot/bootsector.asm
-BIN := boot/bootsector.bin
+SRC := boot/boot.asm
+BIN := boot/boot.bin
 
 all: $(BIN)
 
